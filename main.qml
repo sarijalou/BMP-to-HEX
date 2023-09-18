@@ -14,13 +14,13 @@ ApplicationWindow
 
     FileDialog
     {
-        id: my_id
+        id: bmp_FileDialog_id
         //            currentFolder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
         // onAccepted: image.source = selectedFile
         nameFilters: ["BMP file(*.BMP)"]
         onAccepted:
         {
-            group_edit_img_lbl_id.text=manager.copy_from_qml_png(selectedFile)
+            //group_edit_img_lbl_id.text=manager.copy_from_qml_png(selectedFile)
         }
     }
 
@@ -32,7 +32,7 @@ ApplicationWindow
         Button
         {
             text: "choose"
-            onClicked: my_id.open()
+            onClicked: bmp_FileDialog_id.open()
         }
         RadioButton
         {
@@ -64,7 +64,7 @@ ApplicationWindow
         {
             Button
             {
-                text: "Convert"
+                text: "Convert to hex"
                 onClicked:close()
             }
             Button
@@ -76,9 +76,21 @@ ApplicationWindow
 
         Button
         {
+            text: "add file to hex"
+            onClicked:close()
+        }
+        Button
+        {
+            text: "save all "
+            onClicked:close()
+        }
+        Button
+        {
             text: "program"
             onClicked:close()
         }
 
     }
+
+
 }
