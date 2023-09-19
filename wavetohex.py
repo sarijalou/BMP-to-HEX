@@ -50,3 +50,5 @@ def convert_wave_to_mono_8bit_hex(input_wave_file, output_hex_file):
 #    print(f"Conversion from {input_wave_file} to {output_hex_file} successful.")
 #else:
 #    print(f"Conversion from {input_wave_file} to {output_hex_file} failed.")
+
+#salaaaaaam3
