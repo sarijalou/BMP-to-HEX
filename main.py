@@ -1,6 +1,8 @@
 # This Python file uses the following encoding: utf-8
 import sys
 from pathlib import Path
+import wavetohex
+import combine
 
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
@@ -57,6 +59,15 @@ class Manager(QObject):
         bmp_file = 'ronaldo.bmp'
         hex_file = 'output1.bin'
         # bmp_to_hex(bmp_file, hex_file)
+    @Slot(str,str)
+    def wave_to_hex(self,wav_file, hex_file):
+       wav_file=wav_file[5:]
+       wavetohex.convert_wave_to_mono_8bit_hex(wav_file, hex_file)
+
+    @Slot(str,list)
+    def combine_all(self,combined_file, input_files):
+        print(input_files)
+#        combine.combine_files(combined_file, input_files)
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
