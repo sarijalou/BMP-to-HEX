@@ -89,7 +89,7 @@ ApplicationWindow
         nameFilters: ["BIN file(*.bin)"]
         onAccepted:
         {
-            mylist.push(selectedFile)
+            mylist.push(selectedFile.toString())
             len_mylist=mylist.length
             console.log(mylist,mylist.length)
             //group_edit_img_lbl_id.text=manager.copy_from_qml_png(selectedFile)
@@ -188,7 +188,12 @@ ApplicationWindow
             Button
             {
                 text: "save all "
-                onClicked:manager.combine_all('my_output.bin',mylist)
+                onClicked:
+                {
+                    console.log(mylist)
+                    manager.combine_all('my_output.bin',mylist)
+
+                        }
             }
             Button
             {

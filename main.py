@@ -66,8 +66,9 @@ class Manager(QObject):
 
     @Slot(str,list)
     def combine_all(self,combined_file, input_files):
-        print(input_files)
-#        combine.combine_files(combined_file, input_files)
+        a=str(input_files[0])
+        print(a,type(input_files))
+        combine.combine_files(combined_file, input_files)
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
