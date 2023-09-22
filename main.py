@@ -70,6 +70,13 @@ class Manager(QObject):
         print(a,type(input_files))
         combine.combine_files(combined_file, input_files)
 
+    @Slot(str,result=int)
+    def count_hex_bytes_in_file(self,file_path):
+        with open(file_path[5:], 'rb') as file:
+            # Read the entire content of the file into a bytes object
+            binary_data = file.read()
+            return len(binary_data)
+
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
