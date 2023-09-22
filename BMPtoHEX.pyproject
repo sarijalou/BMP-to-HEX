@@ -1,3 +1,3 @@
 {
-    "files": ["main.py", "main.qml","wavetohex.py","combine.py"]
+    "files": ["wavetohex.py","combine.py","main.qml","main.py","BMPtoHEX.qml","WAVEtoHEX.qml","COMBINE.qml"]
 }

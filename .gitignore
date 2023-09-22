@@ -70,7 +70,9 @@ CMakeLists.txt.user*
 # Binaries
 # --------
 *.dll
+
 *.exe
+*.bin
 *.bmp
 *.pyproject.user
 *.user.deccaa5

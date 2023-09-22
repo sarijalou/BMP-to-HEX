@@ -1,12 +1,117 @@
 import QtQuick
 import QtQuick.Window
-import QtQuick.Controls 6.5
+import QtQuick.Controls.Material 6.5
 import QtQuick.Layouts
 import QtQuick.Dialogs
 
 
 ApplicationWindow
 {
+
+
+    width: Screen.width*2/3
+    height: Screen.height/1.2
+    visible: true
+
+    TabBar
+    {
+        id: bar
+        width: parent.width
+        TabButton
+        {
+            text: qsTr("BMP to HEX")
+        }
+        TabButton
+        {
+            text: qsTr("WAVE to HEX")
+        }
+        TabButton
+        {
+            text: qsTr("COMBINE HEX FILES")
+        }
+    }
+
+    StackLayout {
+        y:bar.height+1
+
+        width: parent.width
+        height: parent.height-y
+        currentIndex: bar.currentIndex
+        BMPtoHEX{}
+        WAVEtoHEX{}
+        COMBINE{}
+    }
+
+
+
+//    SwipeView
+//    {
+//        id: swipeView
+//        currentIndex: tabBar.currentIndex // Bind to the TabBar's currentIndex
+//        anchors.fill: parent
+
+//        // Page 1
+
+//        Rectangle
+//        {
+//            //                width: parent.width
+//            //                height: parent.height
+//            color: "lightblue"
+//            Text {
+//                anchors.centerIn: parent
+//                text: "Page 1"
+//            }
+//        }
+
+
+//        // Page 2
+
+//        Rectangle
+//        {
+//            //                width: parent.width
+//            //                height: parent.height
+//            color: "lightgreen"
+//            Text {
+//                anchors.centerIn: parent
+//                text: "Page 2"
+//            }
+//        }
+
+
+//        // Page 3
+
+//        Rectangle
+//        {
+//            //                width: parent.width
+//            //                height: parent.height
+//            color: "lightcoral"
+//            Text {
+//                anchors.centerIn: parent
+//                text: "Page 3"
+//            }
+//        }
+
+//    }
+
+    //    TabBar {
+    //        id: tabBar
+    //        y:0
+    //        width: parent.width
+    //        height: 50
+
+    //        TabButton {
+    //            text: "Tab 1"
+    //        }
+    //        TabButton {
+    //            text: "Tab 2"
+    //        }
+    //        TabButton {
+    //            text: "Tab 3"
+    //        }
+    //    }
+
+    /*
+
     property var mylist: []
     property int len_mylist
     width: Screen.width*2/3
@@ -239,4 +344,7 @@ ApplicationWindow
 
         }
     }
+
+
+    */
 }
