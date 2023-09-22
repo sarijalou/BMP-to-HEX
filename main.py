@@ -40,7 +40,7 @@ class Manager(QObject):
                 row_data = bmp.read(width * 3)
                 pixel_data.insert(0, row_data)  # Insert each row at the beginning to reverse the order
 
-        with open(hex_file, 'wb') as hex_output:
+        with open(hex_file[5:], 'wb+') as hex_output:
             # Write the width, height, and pixel data in hexadecimal format
             # hex_output.write(hex(width))
             # hex_output.write(bytes(height))
