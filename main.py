@@ -40,7 +40,7 @@ class Manager(QObject):
                 row_data = bmp.read(width * 3)
                 pixel_data.insert(0, row_data)  # Insert each row at the beginning to reverse the order
 
-        with open(hex_file, 'wb') as hex_output:
+        with open(hex_file[5:], 'wb+') as hex_output:
             # Write the width, height, and pixel data in hexadecimal format
             # hex_output.write(hex(width))
             # hex_output.write(bytes(height))
@@ -69,6 +69,13 @@ class Manager(QObject):
         a=str(input_files[0])
         print(a,type(input_files))
         combine.combine_files(combined_file, input_files)
+
+    @Slot(str,result=int)
+    def count_hex_bytes_in_file(self,file_path):
+        with open(file_path[5:], 'rb') as file:
+            # Read the entire content of the file into a bytes object
+            binary_data = file.read()
+            return len(binary_data)
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
