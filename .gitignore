@@ -76,3 +76,5 @@ CMakeLists.txt.user*
 *.bmp
 *.pyproject.user
 *.user.deccaa5
+
+output/

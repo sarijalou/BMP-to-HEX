@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Window
-import QtQuick.Controls.Material 6.5
+import QtQuick.Controls.Material
 import QtQuick.Layouts
 import QtQuick.Dialogs
 
@@ -11,6 +11,9 @@ ApplicationWindow
     height: Screen.height/1.2
     visible: true
     title: qsTr("BMP to HEX")
+
+    Material.accent: Material.Green
+    Material.theme: Material.Dark
 
     TabBar
     {

@@ -1,3 +1,13 @@
 {
-    "files": ["wavetohex.py","combine.py","main.qml","main.py","BMPtoHEX.qml","WAVEtoHEX.qml","COMBINE.qml"]
+    "files": [
+        "wavetohex.py",
+        "combine.py",
+        "qmls/main.qml",
+        "main.py",
+        "qmls/BMPtoHEX.qml",
+        "qmls/WAVEtoHEX.qml",
+        "qmls/COMBINE.qml",
+        "bmphex.py",
+        "flash.py"
+    ]
 }

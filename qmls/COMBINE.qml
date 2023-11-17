@@ -53,14 +53,27 @@ Item {
             onClicked:
             {
                 console.log(mylist)
-                manager.combine_all('my_output.bin',mylist)
+                manager.combine_all('output/out_combine/my_output.bin',mylist)
 
             }
         }
         Button
         {
+            text: "fill_xff"
+            onClicked:
+            {
+                console.log(mylist)
+                manager.fill_EndOfFile_with_ff_main('output/out_combine/my_output.bin','output/out_fill/my_output2.bin',32)
+            }
+        }
+        Button
+        {
             text: "program"
-            onClicked:close()
+
+            onClicked:
+            {
+                programmer.run_flashrom_command('W25Q32.V','output/out_fill/my_output2.bin')
+            }
         }
 
     }
