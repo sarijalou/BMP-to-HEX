@@ -28,10 +28,19 @@ Item {
             //group_edit_img_lbl_id.text=manager.copy_from_qml_png(selectedFile)
         }
     }
+    Flickable
+    {
+
+        anchors.fill: parent
+        clip: true
+        // interactive: false
+
+        contentHeight: mColumnId.implicitHeight
+        contentWidth: mColumnId.implicitWidth
 
     ColumnLayout
     {
-
+    id:mColumnId
 
         Button
         {
@@ -76,5 +85,6 @@ Item {
             }
         }
 
+    }
     }
 }

@@ -1,7 +1,8 @@
 def combine_files(output_file, input_files):
     with open(output_file, 'wb') as output:
 
-        addrs=len(input_files)*4
+        addrs=(len(input_files)+1)*4
+        output.write(addrs.to_bytes(4, byteorder='little'))
 
         for file in input_files:
             with open(file[5:], 'rb') as input:
